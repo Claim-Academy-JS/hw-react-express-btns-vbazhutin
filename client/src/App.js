@@ -8,27 +8,17 @@ function App() {
   const [users, setUsers] = useState([])
 
   const getUsers = async () => {
-    const res = await fetch("http://localhost:5001/users", {
+    const res = await fetch("http://localhost:5001/users/", {
       method: "GET",
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(res)
     })
-    setUsers(res)
+    console.log(await res.json())
   }
 
   const getTodos = async () => {
     const res = await fetch("http://localhost:5001/todos/", {
       method: "GET",
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      // body: JSON.stringify(res)
     })
-    setTodos(res)
+    console.log(await res.json())
   }
 
   return (
